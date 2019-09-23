@@ -1,0 +1,90 @@
+/*parte inicial: somente tratamento visual e de disposição na tela de cada elemento*/
+#view_input, #view_query{
+  display:flex;
+}
+#text, #expression{
+  background-color: blue;
+}
+
+
+#AND {
+  background-color: red;
+
+}
+#OR {
+  background-color: green;
+
+}
+#pA, #pF{
+  background-color: grey;
+  
+}
+
+#view_el{
+  flex-direction: row;
+  margin: 4px;
+}
+
+
+.slide{
+  height: 25px;
+  width: max-content;
+  flex-direction: row;
+  margin: 4px;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}
+.slide :active {
+  filter: brightness(85%);
+}
+
+.input{
+  margin: 2px;
+  padding: 2px;
+}
+
+.form-control{
+  margin: 2px;
+  padding: 2px;
+}
+
+#bounds{
+  border: 2px;
+  height: 100%;
+  min-height: 35px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #043d5d;
+}
+
+h1{
+  
+  background-color: #043d5d;
+  border-style: solid;
+  border-width: 5%;
+  border-color: #043d5d; 
+
+}
+
+.text-center{
+  font-family: "SacramentoRegular";
+  color: white;
+}
+
+@font-face{
+  font-family:"SacramentoRegular";
+  src:url("Sacramento-Regular.ttf") format("truetype");}
+  SacramentoRegular-font {font-family: "Sacramento-Regular";}
+
+header{
+  height: 100%;
+  background-color: #043d5d;
+  position: relative;
+  top: 0px;
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+}
