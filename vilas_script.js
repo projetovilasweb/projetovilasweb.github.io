@@ -217,8 +217,8 @@ $(' #validate ').click(function(){
       }
       let content = $(this).html()
 
-      if(string.length == 0 && flag != 1){
-        alert('A string não pode estar vazia')
+      if(content.length == 0){
+        alert('não podem existir termos sem conteúdo')
           string = []
           flag =1 
           updateView(flag)
