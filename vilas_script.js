@@ -13,32 +13,31 @@
 const vQ = document.getElementById("view_input")
 
 //eventos de teclado para funcionamento da tecla enter no input de dados
-$("#t1").keypress(function(event) { 
+$("#t").keypress(function(event) { 
   if (event.keyCode === 13) { 
-      $("#b1").click(); 
-  } 
-}); 
-$("#t2").keypress(function(event) { 
-  if (event.keyCode === 13) { 
-      $("#b2").click(); 
+      $("#b").click(); 
   } 
 }); 
 
 //tratamento de entradas de texto
-function handleInput(type){
+function handleInput(){
     
     const div = document.createElement('div');
-    
-    if (type == 1){
-      input = document.getElementsByName('texts')[0].value;
+    let flagspace = 0;
+    input = document.getElementsByName('inputs')[0].value;
+    for(let i = 0; i< input.length; i++){
+      
+      if(input[i] == ' '){
+        
+        input = "\""+input+"\"";
+        div.setAttribute('id', 'expression')
+        flagspace = 1;
+        break;
+      }
+    }
+    if(flagspace == 0){
       div.setAttribute('id', 'text')
     }
-    else if(type == 2){
-      input = document.getElementsByName('expressions')[0].value;
-      input = "\""+input+"\"";
-      div.setAttribute('id', 'expression')
-    }
-    
   
     
     
@@ -50,8 +49,8 @@ function handleInput(type){
     vQ.appendChild(div)
     
 
-    document.getElementById("t1").value = ''
-    document.getElementById("t2").value = ''
+    document.getElementById("t").value = ''
+    
     
 
 } 
@@ -218,7 +217,7 @@ $(' #validate ').click(function(){
       let content = $(this).html()
 
       if(content.length == 0){
-        alert('não podem existir termos sem conteúdo')
+        alert('Não podem existir termos sem conteúdo')
           string = []
           flag =1 
           updateView(flag)
