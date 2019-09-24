@@ -146,14 +146,7 @@ $(' #validate ').click(function(){
   let string_view = ''
   let flag = 0;
   validation_flag = 0;
-  if(string.length == 0){
-    alert('A string não pode estar vazia')
-      string = []
-      flag =1 
-      updateView(flag)
-      return false
 
-  }
 
   $.each( $('#view_input'), function(i, view_input) {
       $('div', view_input).each(function(index) {
@@ -223,6 +216,14 @@ $(' #validate ').click(function(){
         return false
       }
       let content = $(this).html()
+
+      if(string.length == 0 && flag != 1){
+        alert('A string não pode estar vazia')
+          string = []
+          flag =1 
+          updateView(flag)
+          return false
+      }
      
       makeString(idme,content)
       string_view +=content+' '
