@@ -137,7 +137,7 @@ function deleteElement(op){
 }
 
 //Validação lógica da string
-$(' #validate ').click(function(){
+$(' #validate ').click(function(){ 
   
 
   $('#view_query').empty()
@@ -295,6 +295,7 @@ $('#IEEES').click(function(){
     console.log(exp.content)
     if(exp.v == 1){
       if(exp.type == 1){
+        
       IEEEString =IEEEString+exp.content
     }
       else{
@@ -302,7 +303,8 @@ $('#IEEES').click(function(){
         e = e.substr(1)
         e = e.slice(0, -1)
         e = e.replace(/ /g, '%20')
-        IEEEString ='.QT.'+e+'.QT.'
+
+        IEEEString =IEEEString+'.QT.'+e+'.QT.'
       }
     }
     else{

@@ -39,15 +39,6 @@
   filter: brightness(85%);
 }
 
-.input{
-  margin: 2px;
-  padding: 2px;
-}
-
-.form-control{
-  margin: 2px;
-  padding: 2px;
-}
 
 #bounds{
   border: 2px;
@@ -67,6 +58,7 @@ h1{
 
 }
 
+
 .text-center{
   font-family: "SacramentoRegular";
   color: white;
@@ -82,9 +74,14 @@ header{
   background-color: #043d5d;
   position: relative;
   top: 0px;
+  border: 4px solid #043d5d;
 }
 
 html, body{
   margin: 0;
   padding: 0;
+}
+
+div{
+  margin-top: 5px;
 }
