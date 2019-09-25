@@ -6,10 +6,6 @@
 //comentários
 //documentação
 
-
-
-
-
 const vQ = document.getElementById("view_input")
 
 //eventos de teclado para funcionamento da tecla enter no input de dados
@@ -21,14 +17,14 @@ $("#t").keypress(function(event) {
 
 //tratamento de entradas de texto
 function handleInput(){
-    
+
     const div = document.createElement('div');
-    let flagspace = 0;
-    input = document.getElementsByName('inputs')[0].value;
+    let flagspace = 0; //flag para o controle, caso seja termo ou expressão
+    input = document.getElementsByName('inputs')[0].value; 
+
     for(let i = 0; i< input.length; i++){
       
       if(input[i] == ' '){
-        
         input = "\""+input+"\"";
         div.setAttribute('id', 'expression')
         flagspace = 1;
@@ -39,20 +35,15 @@ function handleInput(){
       div.setAttribute('id', 'text')
     }
   
-    
-    
+    //seta os valores da div do input
     div.innerHTML = input
     div.setAttribute('class', 'slide')
     div.setAttribute('order', order)
     div.setAttribute('ondblclick', 'deleteElement('+order+')')
     order++;
     vQ.appendChild(div)
-    
 
-    document.getElementById("t").value = ''
-    
-    
-
+    document.getElementById("t").value = '' // limpa a caixa de texto no html
 } 
 
 //tratamento de operadores
@@ -93,7 +84,7 @@ $("#view_input").sortable({
    axis: "x",
    revert: 150,
    start: function(e, ui){
-       
+    
        placeholderWidth = ui.item.outerWidth();
        ui.placeholder.width(placeholderWidth + 15);
        $('<div class="slide-placeholder-animator" data-width="' + placeholderWidth + '"></div>').insertAfter(ui.placeholder);
@@ -138,14 +129,11 @@ function deleteElement(op){
 
 //Validação lógica da string
 $(' #validate ').click(function(){ 
-  
-
   $('#view_query').empty()
   string = []
   let string_view = ''
   let flag = 0;
   validation_flag = 0;
-
 
   $.each( $('#view_input'), function(i, view_input) {
       $('div', view_input).each(function(index) {
@@ -290,12 +278,11 @@ $('#IEEES').click(function(){
   }
   let IEEEString = "";
   
+  //substituição dos elementos da string pelos correspondentes da codificação IEEE
   for(let i=0; i <string.length ; i++){
     let exp = string[i]
-    console.log(exp.content)
     if(exp.v == 1){
       if(exp.type == 1){
-        
       IEEEString =IEEEString+exp.content
     }
       else{
@@ -303,7 +290,6 @@ $('#IEEES').click(function(){
         e = e.substr(1)
         e = e.slice(0, -1)
         e = e.replace(/ /g, '%20')
-
         IEEEString =IEEEString+'.QT.'+e+'.QT.'
       }
     }
@@ -321,87 +307,12 @@ $('#IEEES').click(function(){
         IEEEString=IEEEString+')'
       }
     }
-
-  
   }
   
-  
-
-console.log(IEEEString)
-
-IEEEString = "https://ieeexplore.ieee.org/search/searchresult.jsp?action=search&matchBoolean=true&searchField=Search_All_Text&queryText=("+IEEEString+")&newsearch=true";
-
-window.open(IEEEString, '_blank');
-
-
+  IEEEString = "https://ieeexplore.ieee.org/search/searchresult.jsp?action=search&matchBoolean=true&searchField=Search_All_Text&queryText=("+IEEEString+")&newsearch=true";
+  window.open(IEEEString, '_blank');
 
 });
-
-
-/*  COMETÁRIO ENGLOBANDO MÉTODO UTILIZANDO ACM BÁSICA
-$('#ACMS').click(function(){
-  let stringACM = []
-  for(let i=0; i <string.length ; i++){
-    let exp = string[i]
-    if(exp.v == 1){
-      if(exp.type == 1){
-      stringACM.push(exp.content)
-      }
-      else{
-        let e = exp.content
-        e = e.replace(/ /g, '%20')
-        stringACM.push(e)
-      }
-  
-    }
-    else{
-      if(exp.type == 2){
-        stringACM.push(' ')
-      }
-      else if(exp.type == 3){
-        stringACM.push('(')
-      }
-      else if(exp.type == 4){
-        stringACM.push(')')
-      }
-      else if(exp.type == 1){
-
-
-      }
-    }
-
-  }
-
-});
-
-*/
-
-
-function ACMAND(index, str){
-  let newStr;
-  let left = str[index-1];
-  let right  = str[index+1];
-  if(right.v == 1){//próxima posição da string é um termo
-    if(left.v == 1){//posição anterior é um termo também
-      letf='%252B'+left //talvez precise de um espaço no futuro, deixa aqui o cometário em caso de bug
-      right='%20%%252B'+right
-    }
-    else{ // o lado esquerdo não é um termo ou expressão, sendo necessáriamente um parênteses fechado
-         
-    }
-
-
-  }
-  else{
-
-
-
-  }
-  
-
-
-}
-
 
 function updateView(flag,str = ''){
   if(flag == 1){
@@ -482,6 +393,8 @@ if(validation_flag == 0){
   let stringACM = []
   let m = string.length
   let textACM ='https://dl.acm.org/results.cfm?query=' 
+  
+  //substituição dos elementos da string pelos correspondentes da codificação ACN
   for(let i=0; i <m ; i++){
     let exp = string[i]
     if(exp.v == 1){
@@ -524,9 +437,3 @@ if(validation_flag == 0){
    
   window.open(textACM, '_blank');
 });
-
-
-
-function clearForms(){
-  this.value = ''
-}

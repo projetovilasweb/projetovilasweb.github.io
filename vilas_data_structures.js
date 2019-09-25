@@ -1,11 +1,3 @@
-//termo
-//expressão
-//grupo
-//string de visualização
-//string IEEE
-//string ACM
-//string Scholar
-
 
 let elements = [] //array que contém todos os elementos da classe texto criados ao longo da execução do sistema
 let string = []
@@ -30,7 +22,3 @@ class Operator{
     } 
 }
 
-//para cada termo, grupo ou expressão adicionada, cria um novo text.
-// atualiza as operações realizadas entre os texts sequencialmente nas estruturas de dados de cada uma das 
-//basas de pesquisa
-//Botão de UNDO => remover, sequencialmente, os texts adicionados => ID sequencial (var global ou static, pesquisar)
