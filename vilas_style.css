@@ -3,30 +3,38 @@
   display:flex;
 }
 #text, #expression{
+  margin-top:0px;
   background-color: blue;
+  user-select: none;
 }
 
 
 #AND {
+  margin-top:0px;
   background-color: red;
-
+  user-select: none;
 }
 #OR {
+  margin-top:0px;
   background-color: green;
+  user-select: none;
 
 }
 #pA, #pF{
+  margin-top:0px;
   background-color: grey;
-  
+  user-select: none;
 }
 
 #view_el{
+  margin-top:0px;
   flex-direction: row;
   margin: 4px;
 }
 
 
 .slide{
+  text-align: center;
   height: 25px;
   width: max-content;
   flex-direction: row;
@@ -42,8 +50,7 @@
 
 #bounds{
   border: 2px;
-  height: 100%;
-  min-height: 35px;
+  height: 40px;
   border-style: solid;
   border-width: 2px;
   border-color: #043d5d;
@@ -60,6 +67,7 @@ h1{
 .text-center{
   font-family: "SacramentoRegular";
   color: white;
+  user-select: none;
 }
 
 @font-face{
@@ -82,4 +90,17 @@ html, body{
 
 div{
   margin-top: 5px;
+}
+
+.cloned-slides{
+  width:100%;
+}
+
+.hor-inp{
+  white-space: nowrap;
+}
+
+.wrp{
+  display: inline-flex;
+
 }

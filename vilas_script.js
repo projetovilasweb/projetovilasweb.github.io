@@ -1,11 +1,6 @@
 
-//limpeza do código
-//organização
-//Mais arquivos JS para melhor organização
-//identação
-//comentários
-//documentação
 
+//constante utilizada para adicionar os termos e operadores inseridos pelo usuário à pagina
 const vQ = document.getElementById("view_input")
 
 //eventos de teclado para funcionamento da tecla enter no input de dados
@@ -79,6 +74,7 @@ function handleOperator(type){
 }
 
 //movimentação dos elementos visuais na string
+
 $("#view_input").sortable({
     placeholder: 'slide-placeholder',
    axis: "x",
@@ -113,6 +109,9 @@ $("#view_input").sortable({
        
    },
 });
+
+
+
 
 //remover a string por inteiro
 $('#bclear').click(function(){
@@ -437,3 +436,23 @@ if(validation_flag == 0){
    
   window.open(textACM, '_blank');
 });
+
+
+
+$(document).ready(function() {
+  $(".hor-inp").css({
+    'min-width': ($(".bound-2").width() + 'px')
+  });
+});
+
+$( window ).resize( function(){
+
+  $(".hor-inp").css({
+    'min-width': ($(".bound-2").width() + 'px')
+  });
+
+});
+  
+function openLink(){
+  window.open("help.html", '_blank');
+}
