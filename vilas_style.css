@@ -1,5 +1,5 @@
 /*parte inicial: somente tratamento visual e de disposição na tela de cada elemento*/
-#view_input, #view_query{
+#view_query{
   display:flex;
 }
 #text, #expression{
@@ -50,12 +50,14 @@
 
 #bounds{
   border: 2px;
-  height: 40px;
+  min-height: 40px;
   border-style: solid;
   border-width: 2px;
   border-color: #043d5d;
   border-radius: 5px;
+  width: 100%
 }
+  
 
 h1{
   background-color: #043d5d;
@@ -101,6 +103,12 @@ div{
 }
 
 .wrp{
-  display: inline-flex;
+  
 
+}
+
+#view_input{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }

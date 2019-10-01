@@ -74,7 +74,7 @@ function handleOperator(type){
 }
 
 //movimentação dos elementos visuais na string
-
+/*
 $("#view_input").sortable({
     placeholder: 'slide-placeholder',
    axis: "x",
@@ -109,8 +109,10 @@ $("#view_input").sortable({
        
    },
 });
-
-
+*/
+$("#view_input").sortable({
+  revert: 150
+});
 
 
 //remover a string por inteiro

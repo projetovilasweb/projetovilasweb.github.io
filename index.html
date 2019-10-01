@@ -11,22 +11,28 @@
 </head>
 
 <header>
+
     <h1 class="text-center">Vilas Web </h1>
+    
 </header>
+
+
 
 <body>
 
+        <input type = "submit" class = "btn btn-default help" value = "Tutorial" onclick="openLink()">
             
 <div class ="container">
+    
     <div class = "input">
-        <div class = row>   
-            <div class="col-xs-11">
+        
+            
                 <input id = 't' class = "form-control" type = "text" name = 'inputs' placeholder="Insira uma expressão ou um termo aqui"> 
-            </div>
-            <div class = col-xs-1>
-                <input type = "submit" class = "btn btn-default" value = "Tutorial" onclick="openLink()">
-            </div>
-        </div>
+            
+          
+                
+            
+        
         <input id = 'b' class = "btn btn-default" type = "submit" value = "Inserir" onclick="handleInput()">
     </div>
 
@@ -55,12 +61,13 @@
     <div>
         <h7 class = "msg_str">Veja a string gerada aqui:</h7>
     </div>
-
-    <div id = "bounds" class = bound-2>
-        <div id = "view_query">
+  
+    <div class = "wrp">
+        <div id = "bounds" class = bound-2>
+            <div id = "view_query">
+            </div>
         </div>
     </div>
-
     <div id = "searches">
         <input id = 'IEEES' class = "btn btn-default" type = "submit" value = "IEEE">
         <input id = 'ACMS' class = "btn btn-default" type = "submit" value = "ACM">
