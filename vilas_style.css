@@ -24,6 +24,7 @@
   margin-top:0px;
   background-color: grey;
   user-select: none;
+  width: max-content + 2px;
 }
 
 #view_el{
