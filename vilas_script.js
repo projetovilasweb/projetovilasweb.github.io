@@ -138,8 +138,8 @@ $(' #validate ').click(function(){
       $('div', view_input).each(function(index) {
          let idme = $(this).attr('id')
          let idnext = $(this).next().attr('id')
-         console.log(idnext)
-      if(idme == idnext && (idme != 'pF' || idme != 'pA')){
+         
+      if((idme == idnext) && ((idme != 'pF') && (idme != 'pA'))){
         alertEquals(idme, index)
         string = []
         flag = 1 
